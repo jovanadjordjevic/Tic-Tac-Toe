@@ -1,0 +1,113 @@
+:root {
+  --light-grey: #b3b3b3;
+  --sea-blue: #14bdac;
+  --grey: #6f757a;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.main {
+  position: relative;
+  border: 1px solid var(--light-grey);
+  border-radius: 4px;
+  margin: 20px;
+}
+
+.players {
+  display: flex;
+  padding: 10px;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.player-x,
+.player-y {
+  display: flex;
+  border: 1px solid var(--light-grey);
+  border-bottom: none;
+  width: 150px;
+  justify-content: space-around;
+  border-radius: 5px;
+  font-size: 1.2rem;
+  margin: 10px;
+}
+
+.active {
+  border-bottom: 2px solid var(--sea-blue);
+}
+
+.start-game {
+  font-size: 0.9rem;
+  padding: 10px;
+  justify-content: center;
+  display: flex;
+}
+
+.display {
+  background-color: var(--sea-blue);
+  display: grid;
+  grid-template-columns: repeat(3, 80px);
+  grid-template-rows: repeat(3, 80px);
+  justify-content: center;
+  border-right: none;
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+
+.field {
+  border: 2px solid var(--grey);
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  font-size: 5rem;
+  color: var(--grey);
+}
+
+.disable {
+  pointer-events: none;
+}
+
+.field:nth-child(-n + 3) {
+  border-top: none;
+}
+
+.field:nth-child(3n) {
+  border-right: none;
+}
+
+.field:nth-child(3n - 2) {
+  border-left: none;
+}
+
+.field:nth-child(n + 7) {
+  border-bottom: none;
+}
+
+.restart {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px;
+  color: var(--sea-blue);
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.winner {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  z-index: 100;
+  position: absolute;
+  top: 30%;
+  left: 20%;
+  font-size: 4rem;
+}
